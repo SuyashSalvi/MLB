@@ -1,0 +1,26 @@
+PlayerID,PlayerName,Team,AtBats,Hits,HomeRuns,Strikeouts,RBIs,BattingAverage,OPS
+ID670764,Taylor Walls,home,4,0,0,1,0,0,0
+ID670623,Isaac Paredes,home,4,0,0,2,0,0,0
+ID623912,Harold Ramírez,home,4,2,0,1,0,0,0
+ID542194,Christian Bethancourt,home,3,1,1,0,1,0,0
+ID678554,Curtis Mead,home,5,1,0,1,1,0,0
+ID622534,Manuel Margot,home,4,0,0,1,0,0,0
+ID666018,Jonathan Aranda,home,1,0,0,1,0,0,0
+ID666139,Josh Lowe,home,5,3,1,1,4,0,0
+ID650907,René Pinto,home,0,0,0,0,0,0,0
+ID606132,Raimel Tapia,home,0,0,0,0,0,0,0
+ID650490,Yandy Díaz,home,4,4,1,0,1,0,0
+ID691406,Junior Caminero,home,4,1,0,1,0,0,0
+ID686490,Cam Eden,away,0,0,0,0,0,0,0
+ID666182,Bo Bichette,away,5,2,0,2,0,0,0
+ID662139,Daulton Varsho,away,3,0,0,2,0,0,0
+ID656305,Matt Chapman,away,3,0,0,1,0,0,0
+ID593160,Whit Merrifield,away,1,0,0,0,1,0,0
+ID595281,Kevin Kiermaier,away,5,1,0,1,0,0,0
+ID676914,Davis Schneider,away,4,0,0,1,0,0,0
+ID669289,Santiago Espinal,away,1,1,0,0,0,0,0
+ID543807,George Springer,away,6,1,0,1,2,0,0
+ID624415,Cavan Biggio,away,4,2,0,0,1,0,0
+ID623168,Tyler Heineman,away,3,1,0,1,0,0,0
+ID665489,Vladimir Guerrero Jr.,away,3,2,0,0,1,0,0
+ID672386,Alejandro Kirk,away,1,0,0,0,0,0,0
