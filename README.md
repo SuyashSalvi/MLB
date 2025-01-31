@@ -52,7 +52,7 @@ gsutil cp cleaned_mlb_homeruns.csv gs://mlb-prospect-data/
 ```python
 from google.cloud import aiplatform
 
-aiplatform.init(project="mlb-project-449501", location="us-central1")
+aiplatform.init(project="projectID", location="")
 
 dataset = aiplatform.TabularDataset.create(
     display_name="mlb_prospect_prediction",
@@ -130,8 +130,8 @@ MLB-Prospect-Prediction/
 ---
 
 ## **Contributors**
-👨‍💻 **Suyash** - Data Engineer & Model Trainer  
-👩‍💻 **[Your Name]** - Full-Stack Development & Data Cleaning  
+👨‍💻 **Suyash Salvi** 
+👩‍💻 **Ruchika Muddinagiri** 
 
 ---
 
@@ -169,8 +169,4 @@ npm run dev
 - **Google Cloud Storage:** [https://cloud.google.com/storage](https://cloud.google.com/storage)
 - **Next.js Documentation:** [https://nextjs.org/docs](https://nextjs.org/docs)
 - **Tailwind CSS:** [https://tailwindcss.com/](https://tailwindcss.com/)
-
----
-
-Let me know if you need any modifications! 🚀
 
