@@ -1,0 +1,26 @@
+PlayerName,Team,AtBats,Hits,HomeRuns,Strikeouts,RBIs,BattingAverage,OPS,PlayerID
+Taylor Walls,home,4,0,0,1,0,0,0,bd22702e-aea1-480a-94f2-ecf8a24cb6fc
+Isaac Paredes,home,4,0,0,2,0,0,0,630d5c5e-ae1b-4bf4-9044-3a13471d6a77
+Harold Ramírez,home,4,2,0,1,0,0,0,5ba4f9c3-1f85-4578-a391-0ea78bd349f5
+Christian Bethancourt,home,3,1,1,0,1,0,0,a9ca4c31-621d-4079-ab39-f151ef91337e
+Curtis Mead,home,5,1,0,1,1,0,0,100000
+Manuel Margot,home,4,0,0,1,0,0,0,4c808377-d855-4aac-930d-431304466a73
+Jonathan Aranda,home,1,0,0,1,0,0,0,b7e98fe0-3630-48e1-af9f-54307bbc3f4c
+Josh Lowe,home,5,3,1,1,4,0,0,d32ee8a5-96e7-4a03-9ccc-a9b8c967fcc1
+René Pinto,home,0,0,0,0,0,0,0,8e65e649-9963-46ad-ad61-d98637343e20
+Raimel Tapia,home,0,0,0,0,0,0,0,f52527ff-bfc6-4817-b9ba-1e5f590c7575
+Yandy Díaz,home,4,4,1,0,1,0,0,ee472f70-a8b1-44d8-8aea-bd47259bd18f
+Junior Caminero,home,4,1,0,1,0,0,0,7678fba3-3883-4d95-8e29-7046ab342cce
+Cam Eden,away,0,0,0,0,0,0,0,100001
+Bo Bichette,away,5,2,0,2,0,0,0,7624ad86-ec6b-4b3d-a86a-8c6477707c19
+Daulton Varsho,away,3,0,0,2,0,0,0,4941c3e1-b783-413c-9c1e-d93fb2cf96c3
+Matt Chapman,away,3,0,0,1,0,0,0,d49810c7-5c15-42ec-ae6c-6aff5870f36f
+Whit Merrifield,away,1,0,0,0,1,0,0,1a351577-6975-4fa4-b15e-d45ff28985aa
+Kevin Kiermaier,away,5,1,0,1,0,0,0,ceb9f558-8c00-4209-a933-d4a67f90200e
+Davis Schneider,away,4,0,0,1,0,0,0,9025b876-b34b-452d-a752-bc5e6503dfd0
+Santiago Espinal,away,1,1,0,0,0,0,0,b36c8b44-1287-40de-ae77-1104053451e1
+George Springer,away,6,1,0,1,2,0,0,c69b10a0-f763-4efa-a1aa-b073a4e8cf4d
+Cavan Biggio,away,4,2,0,0,1,0,0,68b28ea4-30fe-4700-a61d-30b4787e8218
+Tyler Heineman,away,3,1,0,1,0,0,0,100002
+Vladimir Guerrero Jr.,away,3,2,0,0,1,0,0,100003
+Alejandro Kirk,away,1,0,0,0,0,0,0,a945d7d4-6b6d-4ff4-8790-9bfb8ccddace

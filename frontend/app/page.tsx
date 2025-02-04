@@ -19,78 +19,61 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
-
-const samplePlayers = [
-  {
-    id: 1,
-    name: "Mike Trout",
-    team: "Los Angeles Angels",
-    position: "CF",
-    image: "https://images.unsplash.com/photo-1631194758628-71ec7c35137e?auto=format&fit=crop&q=80&w=100&h=100",
-    bio: "Mike Trout is widely regarded as one of the greatest baseball players of all time. His combination of power, speed, and defensive prowess has earned him numerous accolades.",
-    currentStats: {
-      avg: ".296",
-      hr: 40,
-      rbi: 95,
-      ops: ".972",
-    },
-    historicalData: [
-      { year: 2020, avg: 0.281, hr: 17, rbi: 46 },
-      { year: 2021, avg: 0.296, hr: 39, rbi: 79 },
-      { year: 2022, avg: 0.283, hr: 40, rbi: 80 },
-      { year: 2023, avg: 0.296, hr: 40, rbi: 95 },
-    ],
-    predictedData: [
-      { year: 2024, avg: 0.291, hr: 42, rbi: 98 },
-      { year: 2025, avg: 0.288, hr: 38, rbi: 92 },
-      { year: 2026, avg: 0.285, hr: 36, rbi: 88 },
-    ],
-  },
-  {
-    id: 2,
-    name: "Shohei Ohtani",
-    team: "Los Angeles Dodgers",
-    position: "DH/SP",
-    image: "https://images.unsplash.com/photo-1629285483773-6b5cde2171d1?auto=format&fit=crop&q=80&w=100&h=100",
-    bio: "Shohei Ohtani is a unique talent in MLB history, excelling both as a pitcher and hitter. His two-way ability has drawn comparisons to Babe Ruth.",
-    currentStats: {
-      avg: ".304",
-      hr: 44,
-      rbi: 95,
-      ops: "1.066",
-    },
-    historicalData: [
-      { year: 2020, avg: 0.286, hr: 7, rbi: 24 },
-      { year: 2021, avg: 0.257, hr: 46, rbi: 100 },
-      { year: 2022, avg: 0.273, hr: 34, rbi: 95 },
-      { year: 2023, avg: 0.304, hr: 44, rbi: 95 },
-    ],
-    predictedData: [
-      { year: 2024, avg: 0.298, hr: 45, rbi: 102 },
-      { year: 2025, avg: 0.301, hr: 47, rbi: 105 },
-      { year: 2026, avg: 0.295, hr: 43, rbi: 98 },
-    ],
-  },
-];
+import { ProcessedPlayerStats } from "@/lib/types";
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedPlayer, setSelectedPlayer] = useState(samplePlayers[0]);
+  const [players, setPlayers] = useState<ProcessedPlayerStats[]>([]);
+  const [selectedPlayer, setSelectedPlayer] = useState<ProcessedPlayerStats | null>(null);
   const [confidenceLevel, setConfidenceLevel] = useState([85]);
-  const [chartData, setChartData] = useState(selectedPlayer.historicalData);
+  const [chartData, setChartData] = useState<any[]>([]);
   const [activeTab, setActiveTab] = useState("current");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (activeTab === "historical") {
-      setChartData(selectedPlayer.historicalData);
-    } else if (activeTab === "predicted") {
-      setChartData(selectedPlayer.predictedData);
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/players');
+        const data = await response.json();
+        setPlayers(data);
+        if (data.length > 0) {
+          setSelectedPlayer(data[0]);
+        }
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error loading player data:', error);
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (selectedPlayer) {
+      if (activeTab === "historical") {
+        setChartData(selectedPlayer.historicalData);
+      } else if (activeTab === "predicted") {
+        setChartData(selectedPlayer.predictedData);
+      }
     }
   }, [selectedPlayer, activeTab]);
 
-  const filteredPlayers = samplePlayers.filter((player) =>
+  const filteredPlayers = players.filter((player) =>
     player.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
+
+  if (!selectedPlayer) {
+    return null;
+  }
 
   return (
     <main className="min-h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100 via-background to-background dark:from-blue-950">
